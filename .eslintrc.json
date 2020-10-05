@@ -24,6 +24,7 @@
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "max-len": "off"
   }
 }

@@ -8,7 +8,7 @@ import { Container, Form } from '../styles/home';
 
 export default function Home() {
   const [id, setId] = useState('');
-  const history = useRouter('');
+  const router = useRouter('');
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -19,7 +19,7 @@ export default function Home() {
       localStorage.setItem('ongId', id);
       localStorage.setItem('ongName', res.data.name);
 
-      history.push('/profile');
+      router.push('/profile');
     } catch (error) {
       alert('Oh no! Falha no login, tente novamente');
     }
