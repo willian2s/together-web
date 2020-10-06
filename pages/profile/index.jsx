@@ -59,7 +59,7 @@ export default function Profile() {
           {ongName}
         </span>
 
-        <Link href="/incidents/new">
+        <Link href="/new-incidents">
           <a className="button">Cadastrar novo caso</a>
         </Link>
         <button onClick={handleLogout} type="button">
