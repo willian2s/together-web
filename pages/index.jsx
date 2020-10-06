@@ -2,11 +2,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { CookieStorage } from 'cookie-storage';
 
 import { FiLogIn } from 'react-icons/fi'; import api from '../libs/api';
 import { Container, Form } from '../styles/home.style';
 
 export default function Home() {
+  const cookieStorage = new CookieStorage();
+
   const [id, setId] = useState('');
   const router = useRouter('');
 
@@ -16,8 +19,8 @@ export default function Home() {
     try {
       const res = await api.post('sessions', { id });
 
-      localStorage.setItem('ongId', id);
-      localStorage.setItem('ongName', res.data.name);
+      cookieStorage.setItem('ongId', id);
+      cookieStorage.setItem('ongName', res.data.name);
 
       router.push('/profile');
     } catch (error) {

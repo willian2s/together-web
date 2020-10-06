@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { CookieStorage } from 'cookie-storage';
 
 import { FiPower, FiTrash } from 'react-icons/fi';
 import api from '../../libs/api';
@@ -10,11 +11,13 @@ import {
 } from '../../styles/profile.style';
 
 export default function Profile() {
+  const cookieStorage = new CookieStorage();
+
   const [incidents, setIncidents] = useState([]);
   const router = useRouter('');
 
-  const ongId = localStorage.getItem('ongId');
-  const ongName = localStorage.getItem('ongName');
+  const ongId = cookieStorage.getItem('ongId');
+  const ongName = cookieStorage.getItem('ongName');
 
   useEffect(() => {
     api.get('profile', {
@@ -41,7 +44,7 @@ export default function Profile() {
   }
 
   function handleLogout() {
-    localStorage.clear();
+    cookieStorage.clear();
 
     router.push('/');
   }

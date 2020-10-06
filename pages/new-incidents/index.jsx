@@ -2,18 +2,21 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { CookieStorage } from 'cookie-storage';
 
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../libs/api';
 import { Container, Content, Form } from '../../styles/new-incident.style';
 
 export default function NewIncident() {
+  const cookieStorage = new CookieStorage();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
 
   const router = useRouter();
-  const ongId = localStorage.getItem('ongId');
+  const ongId = cookieStorage.getItem('ongId');
 
   async function handleNewIncident(e) {
     e.preventDefault();
