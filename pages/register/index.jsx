@@ -7,7 +7,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../libs/api';
 import {
   Container, Content, Description, InputGroup,
-} from '../../styles/register';
+} from '../../styles/register.style';
 
 export default function Register() {
   const [name, setName] = useState('');

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { FiLogIn } from 'react-icons/fi'; import api from '../libs/api';
-import { Container, Form } from '../styles/home';
+import { Container, Form } from '../styles/home.style';
 
 export default function Home() {
   const [id, setId] = useState('');
