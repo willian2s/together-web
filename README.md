@@ -38,7 +38,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 A Together é um projeto que visa conectar pessoas que desejam fazer contribuições monetárias a ONG's (Organizações não governamentais) que precisam de ajuda.
 
-[Clique aqui para acessar](https://togetherapp.netlify.app/)
+[Clique aqui para acessar](https://together-web-v2.vercel.app/)
 
 ## 🔖 Layout
 
